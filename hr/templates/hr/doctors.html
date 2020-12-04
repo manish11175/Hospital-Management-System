@@ -1,0 +1,101 @@
+{%	extends	"hbase.html"	%}
+
+{%block style%}
+
+
+    
+{%endblock%}
+{%	block	title	%}	doctors {%	endblock	%}
+
+{%	block content	%}	
+
+<div class="card-body" >
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr style="background-color: darkgreen;"> 
+            <th>Availabe DOCTOR</th>
+          </tr>
+          <tr style="background-color: darkgreen;">
+     
+              <th>Doctor</th>
+              <th>Email</th>
+             
+              <th>Contact</th>
+              <th>Specialist</th>
+              <th>Address</th>
+              <th>Join Date</th>
+              <th>Update</th>
+          </tr>
+        </thead>
+          <tbody>
+          {% for ap in a_doc %}
+              <tr style="color: white;">
+               
+              <td>{{ap.doctor_id.first_name}}  {{ap.doctor_id.first_name}} </td>
+              <td>{{ap.doctor_id.email}}</td>
+              <td>{{ap.doctor_id.profile.contact_no}}</td>
+              <td>{{ap.specialist}}</td>
+              <td>{{ap.address}}</td>
+              <td>{{ap.doctor_id.profile.join_date}}</td>
+            
+              
+              <td><button class="btn btn-success" type="submit"><a href="{% url "doctor_update" ap.doctor_id %}">Update</a></button></td>  
+             
+            
+              </tr>
+{%endfor%}
+          </tbody>
+          
+      </table>
+   
+    </div>
+  </div>
+  </div>
+  
+  <div class="card-body" >
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr style="background-color: darkgreen;"> 
+              <th>Unavailabe DOCTOR</th>
+            </tr>
+            <tr style="background-color: darkgreen;">
+       
+                <th>Doctor</th>
+                <th>Email</th>
+               
+                <th>Contact</th>
+                <th>Specialist</th>
+                <th>Address</th>
+                <th>Join Date</th>
+                <th>Update</th>
+            </tr>
+          </thead>
+            <tbody>
+            {% for ap in d_doc %}
+                <tr style="color: white;">
+                 
+                <td>{{ap.doctor_id.first_name}}  {{ap.doctor_id.first_name}} </td>
+                <td>{{ap.doctor_id.email}}</td>
+                <td>{{ap.doctor_id.profile.contact_no}}</td>
+                <td>{{ap.specialist}}</td>
+                <td>{{ap.address}}</td>
+                <td>{{ap.doctor_id.profile.join_date}}</td>
+                <td><button class="btn btn-success" type="submit"><a href="{% url "doctor_update" ap.doctor_id %}">Update</a></button></td>  
+             
+                
+              
+                </tr>
+  {%endfor%}
+            </tbody>
+            
+      </table>
+   
+    </div>
+  </div>
+  </div>
+  
+
+	
+{%endblock%}

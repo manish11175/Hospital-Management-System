@@ -1,0 +1,66 @@
+{%	extends	"base.html"	%}
+
+{%block style%}
+
+
+    
+{%endblock%}
+{%	block	title	%}prescription {%	endblock	%}
+
+{%	block content	%}	
+<div class="mx-2 my-2" align="center">
+  {% if messages %}
+
+  {%	for	message	in	messages	%}						
+  <p style="color: white;">{{	message	}}</p>								
+                                    
+                    
+    {%	endfor	%}		
+
+  {%	endif %}
+  
+  </div>
+<div class="card-body" >
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr style="background-color: darkgreen;"> 
+            <th>Prescription</th>
+          </tr>
+          <tr style="background-color: darkgreen;">
+     
+              <th>Doctor Name</th>
+              <th>Patient Name</th>
+             
+              <th> Date</th>
+              <th>symptom</th>
+              <th>Prescription</th>
+              
+              
+          </tr>
+        </thead>
+          <tbody>
+          {% for ap in prescription %}
+              <tr style="color: white;">
+               
+              <td>{{ap.doctor.doctor_id.first_name}} {{ap.doctor.doctor_id.last_name}} </td>
+              <td>{{ap.patient.patient_id.first_name}} {{ap.patient.patient_id.last_name}}</td>
+              <td>{{ap.date}}</td>
+              <td>{{ap.symptom}}</td>
+              <td>{{ap.prescription}}</td>
+           
+              
+  
+            
+              </tr>
+{%endfor%}
+          </tbody>
+          
+      </table>
+   
+    </div>
+  </div>
+  </div>
+  
+	
+{%endblock%}

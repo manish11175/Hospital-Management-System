@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="mx-2 my-2" align="center">
+    {% if messages %}
+  
+    {%	for	message	in	messages	%}						
+    <p style="color: white;">{{	message	}}</p>								
+                                      
+                      
+      {%	endfor	%}		
+
+    {%	endif %}
+    
+    </div>
+    
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="media-content px-3 align-self-center mbr-white py-2">
+            
+  
+  <p style="color:#00414bd4;" class="mbr-author-name pt-4 mb-2 mbr-fonts-style display-1">
+              {{request.user.first_name.upper}} {{request.user.last_name.upper}}
+            </p>
+            <p style="color:#00414bd4;" class="mbr-author-desc mbr-fonts-style display-7">
+               {{request.user.profile.role.upper}} In HosManSys
+            </p>
+        </div>
+
+        
+          <img src="/media/{{request.user.profile.photo}}/"  height="250px" width="250px">
+        
+    </div>
+</div>
+
+{% endblock%}

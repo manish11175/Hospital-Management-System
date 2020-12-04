@@ -1,0 +1,114 @@
+{%	extends	"base.html"	%}
+
+{%block style%}
+
+
+    
+{%endblock%}
+{%	block	title	%}	appointment {%	endblock	%}
+
+{%	block content	%}	
+<div class="mx-2 my-2" align="center">
+  {% if messages %}
+
+  {%	for	message	in	messages	%}						
+  <p style="color: white;">{{	message	}}</p>								
+                                    
+                    
+    {%	endfor	%}		
+
+  {%	endif %}
+  
+  </div>
+
+<div class="card-body" >
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr style="background-color: darkgreen;"> 
+            <th>APPOINTMENTS</th>
+          </tr>
+          <tr style="background-color: darkgreen;">
+     
+              <th>Doctor</th>
+              <th>Patient Name</th>
+             
+              <th>Appointment Date</th>
+              <th>time</th>
+              <th>disease</th>
+              <th>status</th>
+              <th>Update</th>
+          </tr>
+        </thead>
+          <tbody>
+          {% for ap in a %}
+              <tr style="color: white;">
+               
+              <td>{{ap.docter.doctor_name}} </td>
+              <td>{{ap.patient.patient_name}}</td>
+              <td>{{ap.date}}</td>
+              <td>{{ap.time}}</td>
+              <td>{{ap.purpose}}</td>
+              <td>{{ap.status}}</td>
+            
+              
+              <td><button class="btn btn-success" type="submit"><a href="{% url 'appointment_update' ap.appointment_id %}">Update</a></button></td>  
+             
+            
+              </tr>
+{%endfor%}
+          </tbody>
+          
+      </table>
+   
+    </div>
+  </div>
+  </div>
+  
+  <div class="card-body" >
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr style="background-color: darkgreen;"> 
+            <th>ONLINE APPOINTMENTS</th>
+          </tr>
+          <tr style="background-color: darkgreen;">
+     
+              <th>Doctor</th>
+              <th>Patient Name</th>
+             
+              <th>Appointment Date</th>
+              <th>time</th>
+              <th>disease</th>
+              <th>status</th>
+              <th>Update</th>
+          </tr>
+        </thead>
+          <tbody>
+          {% for ap in b %}
+              <tr style="color: white;">
+               
+              <td>{{ap.docter.doctor_name}} </td>
+              <td>{{ap.patient.patient_name}}</td>
+              <td>{{ap.date}}</td>
+              <td>{{ap.time}}</td>
+              <td>{{ap.purpose}}</td>
+              <td>{{ap.status}}</td>
+            
+              
+              <td><button class="btn btn-success" type="submit"><a href="{% url 'patient_appointment_update' ap.appointment_id %}">Update</a></button></td>  
+             
+            
+              </tr>
+{%endfor%}
+          </tbody>
+          
+      </table>
+   
+    </div>
+  </div>
+  </div>
+  
+
+	
+{%endblock%}

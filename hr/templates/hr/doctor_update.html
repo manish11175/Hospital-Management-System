@@ -1,0 +1,41 @@
+{%	extends	"hbase.html"	%}
+
+{%block style%}
+
+
+    
+{%endblock%}
+{%	block	title	%}	appointment {%	endblock	%}
+
+{%	block content	%}	
+	
+
+	
+</div>
+<div class="login-page">
+   
+    <div class="form">
+     
+      <form class="login-form" method="post" action="{% url "doctor_update" pk %}">
+        {%	csrf_token	%}
+        				
+      <label>Doctor</label> 
+    
+        
+      
+        
+        <label>Status</label> 
+        <select name="active">
+            
+             <option value="True">Availabe</option>
+             <option value="False">Unavailabe</option>
+             
+ 
+         </select><br>
+         
+        <button  class="btn btn-outline-success my-2 my-sm-0" type="submit">Update</button>
+       
+      </form>
+    </div>
+  </div
+{%endblock%}

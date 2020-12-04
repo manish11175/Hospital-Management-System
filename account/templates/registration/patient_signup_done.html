@@ -1,0 +1,6 @@
+{%	extends	"abase.html"	%}
+{%	block	title	%}Welcome{%	endblock	%}
+{%	block	content	%}		
+<h1>Welcome	{{	new_user.first_name	}}!</h1>		
+<p  align="center" style="color:white;">Your	account	is created successfully Now ! you can login	{% url "login"%}</p>
+{%	endblock	%}

@@ -1,0 +1,38 @@
+{%	extends	"abase.html"	%}
+{%	block	title	%} login{%	endblock	%}
+
+{%block style%}
+    
+  }
+{%endblock%}
+{%	block	content	%}
+<div class="mx-2 my-2" align="center">
+{% if messages %}
+<ul	class="messages">
+{%	for	message	in	messages	%}						
+<p	style="color: white;">{{	message	}}</p>								
+  								
+  				
+  {%	endfor	%}		
+</ul> 
+{%	endif %}
+
+</div>
+
+<div class="card-body">
+  <div class="form">
+     
+      <form class="login-form" method="post" action="/account/login/">
+        {%	csrf_token	%}
+        <input	type="hidden"	name="next"	value="{{	next	}}"	/>	
+        <input type="text" name="username" placeholder="username"/>
+        <input type="password" name="password" placeholder="password"/>
+        
+        <button type="submit"> login</button>
+        
+        <p class="message"><a	href="#">Forgotten your password?</a></p>
+
+      </form>
+  </div>
+</div>
+        {%endblock%}

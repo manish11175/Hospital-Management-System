@@ -1,0 +1,6 @@
+{%	extends	"hbase.html"	%}
+{%	block	title	%}Welcome{%	endblock	%}
+{%	block	content	%}		
+<h1>Welcome	{{	new_user.first_name	}}!</h1>		
+<p  align="center" style="color:white;"> Account Create Successfully As {{	new_user.profile.role}}</p>
+{%	endblock	%}

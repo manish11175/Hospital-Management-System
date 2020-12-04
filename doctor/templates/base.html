@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head%}
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    {% endblock%}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>{%	block	title	%}{%	endblock	%}</title>
+    <style>{% block style%}
+      {% endblock%}
+      .login-page {
+        width: 500px;
+        padding: 3% 0 0;
+        margin: auto;
+      }
+      .card-body {
+        
+        padding: 1.25rem;
+    }
+    .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 500px;
+        margin: 0 auto 100px;
+        padding: 20px;
+        
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      }
+      .form input {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #0b3035;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+      }
+      .form button:hover,.form button:active,.form button:focus {
+        background: brown;
+      }
+      .form .message {
+        margin: 15px 0 0;
+        color: #b3b3b3;
+        font-size: 12px;
+      }
+      .form .message a {
+        color: #4CAF50;
+        text-decoration: none;
+      }
+      .form .register-form {
+        display: none;
+      }
+      .container {
+        position: relative;
+        z-index: 1;
+        
+        margin: 0 auto;
+      }
+      .container:before, .container:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .container .info {
+        margin: 50px auto;
+        text-align: center;
+      }
+      .container .info h1 {
+        margin: 0 0 15px;
+        padding: 0;
+        font-size: 36px;
+        font-weight: 300;
+        color: #1a1a1a;
+      }
+      .container .info span {
+        color: #4d4d4d;
+        font-size: 12px;
+      }
+      .container .info span a {
+        color: #000000;
+        text-decoration: none;
+      }
+      .container .info span .fa {
+        color: #EF3B3A;
+      }
+      body {
+        background: #76b852; /* fallback for old browsers */
+        background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+        background: -moz-linear-gradient(right, #76b852, #8DC26F);
+        background: -o-linear-gradient(right, #76b852, #8DC26F);
+        background: linear-gradient(to left, #1a3f4c, #001719);
+        font-family: "Roboto", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;      
+      }
+      .dropdown-item:hover {
+        color:white;
+        text-decoration: none;
+        background-color: brown;
+    }
+    
+    .dropdown-item {
+      color:white;
+      font-weight: 500;
+      background-color:#001719;
+    }
+   
+     
+
+
+
+      .bg-info {
+        background-color: #00414bd4!important;
+    }
+      .navbar-light .navbar-brand {
+        color: white;
+    }
+    .navbar-light .navbar-nav .nav-link {
+      color:white;
+  }
+  .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color:white;
+}
+
+.navbar{
+    display:flow-root;
+}
+
+
+
+
+
+
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 3rem;
+    padding-left: .5rem;
+}
+h1{ 
+  font-size:18px;
+  color:white;
+  text-align:center;
+  margin-top: 65px;
+  margin-bottom: 1rem;
+}
+
+.clickable {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;     
+  z-index: 1;
+}
+.ml-2, .mx-2 {
+  margin-left: 13.5rem!important;
+}
+.rectangles .rectangle {
+  
+  display: inline-block;
+ 
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  background-color: white;
+  padding: 10px 10px 10px 100px;
+  position: relative;
+}
+
+.rectangles .rectangle .circle {
+background: #0b3035;
+border-radius: 100%;
+height: 160px;
+width: 160px;
+position: absolute;
+top: 20px;
+left: 20px;
+}
+
+    
+    
+    
+
+    </style>
+    <style>{% block js %}{% endblock%}</style>
+  </head>
+  <body >
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+     <a class="navbar-brand" href="#">HosManSys</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      {%if request.user.is_authenticated	%}
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mx-4">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url "doctor_dash" %}"><i class="fa fa-fw fa-home"></i>Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url "prescriptions" %}">Patient Prescription<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url "doctor_prescription" %}">Prescription<span class="sr-only">(current)</span></a>
+          </li>
+ <li class="nav-item active">
+                <a class="nav-link" href="{% url "doctor_appointment" %}">Appointment<span class="sr-only">(current)</span></a>
+              </li>
+          
+          {%	if	request.user.is_authenticated	%}
+           
+          <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{request.user.first_name.upper}} {{request.user.last_name.upper}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{% url "doctor_edit"%}">Edit Profile</a>
+                  <a class="dropdown-item" href="{% url "doctor_password_change"%}">Change Password</a>
+                 
+                </div>
+              </li>
+   
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url "logout" %}">Logout<span class="sr-only">(current)</span></a>
+          </li>
+          {% endif %}
+        </ul>
+        
+      </div>
+    {% else %}
+  
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mx-4">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><i class="fa fa-fw fa-home"></i> Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url "login"%}"><i class="fa fa-fw fa-user"></i> Login <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url "register"%}"><i class="fa fa-fw fa-user"></i> Registration <span class="sr-only">(current)</span></a>
+          </li>
+    
+  
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><i class="fa fa-fw fa-wrench"></i> Services<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><i class="fa fa-fw fa-envelope"></i> Contact Us<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      
+    </div>
+  
+
+     {%endif%}
+
+    </nav>
+  		
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script	src="https://ajax.googleapis.com/ajax/libs/jquery/			3.3.1/jquery.min.js"></script>	
+    
+  
+ 
+ 
+    
+    
+{% block content%}{% endblock%}
+  </body>
+</html>

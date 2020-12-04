@@ -1,0 +1,51 @@
+{%	extends	"base.html"	%}
+
+{%block style%}
+
+
+    
+{%endblock%}
+{%	block	title	%}	precription {%	endblock	%}
+
+{%	block content	%}	
+<div class="mx-2 my-2" align="center">
+  {% if messages %}
+
+  {%	for	message	in	messages	%}						
+  <p style="color: white;">{{	message	}}</p>								
+                                    
+                    
+    {%	endfor	%}		
+
+  {%	endif %}
+  
+  </div>	
+
+	
+</div>
+<div class="login-page">
+   
+    <div class="form">
+     
+      <form class="login-form" method="post" action="{% url "doctor_prescription" %}">
+        {%	csrf_token	%}
+        				
+      Patient <select name="patient">
+            {%for p in patient%}
+            <option value="{{p.patient_id}}">{{p.patient_id.first_name}} {{p.patient_id.last_name}}</option>
+            {% endfor%}
+
+        </select>
+        
+        
+        date<input type="date" name="date">
+        <input type="text" name="symptom" placeholder="symptom">
+        <input type="text" name="prescription" placeholder="Prescription">
+        
+    
+        <button  class="btn btn-outline-success my-2 my-sm-0" type="submit">save</button>
+       
+      </form>
+    </div>
+  </div
+{%endblock%}

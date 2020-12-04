@@ -1,0 +1,18 @@
+{%extends "rbase.html"%}
+
+{%	block	title	%}Change password{%	endblock	%}
+{% block content%}
+
+
+
+   
+    <div class="form my-4">
+     
+      <form class="login-form" method="post" action="/account/receptionist_password_change/"	>
+        {%	csrf_token	%}
+        {{	form.as_p	}}
+        <button type="submit">Change</button>
+      </form>
+    </div>
+
+{% endblock%}

@@ -1,0 +1,27 @@
+{%	extends	"hbase.html"	%}
+{%	block	title	%}Edit	your	account{%	endblock	%}
+{%block style%}
+
+  {%endblock%}
+{%	block	content	%}
+
+    
+<div class="card-body">
+   
+    <div class="form"  >
+     
+      <form class="login-form"method="post" action="{% url 'hr_edit'%}" enctype="multipart/form-data">
+        {{	user_form.as_p	}}				
+            {{	profile_form.as_p	}}				
+            {%	csrf_token	%}	
+        
+      
+        <button class="btn-success" type="submit" >Update</button>
+        
+        
+      </form>
+    </div>
+  </div>
+{%	endblock	%}
+    
+    
